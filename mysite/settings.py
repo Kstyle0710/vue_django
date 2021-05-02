@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'taggit',
+    'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
 ]
 
@@ -122,3 +124,7 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
+
+TAGGIT_CASE_INSENSITIVE = True
+
+AUTH_USER_MODEL = 'accounts.User'
