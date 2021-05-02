@@ -1,4 +1,4 @@
-# vue_django
+# Django ------------------------------
 
 ### 1. 세팅 명령어
 + django-admin startproject mysite .
@@ -45,6 +45,8 @@
 + 유저 인증 파일은 settings.py에 등록 : AUTH_USER_MODEL = 'account.User'
 
 ### 10. settings.py 분리 (base.py, develop.py, product.py)
+
+# Vue -------------------------------------------
 
 
 
