@@ -3,7 +3,7 @@ from django.views.generic.detail import BaseDetailView
 from django.views.generic.list import BaseListView
 
 from blog.models import Post
-from api.views_util import obj_to_post
+from api.views_util import obj_to_post, prev_next_post
 
 
 class ApiPostLV(BaseListView):
@@ -20,4 +20,5 @@ class ApiPostDV(BaseDetailView):
     def render_to_response(self, context, **response_kwargs):
         obj = context['object']   # 테이블로부터 꺼내온 레코드 하나
         post = obj_to_post(obj)
+        post['prev'], post['next'] = prev_next_post(obj)
         return JsonResponse(data=post, safe=True, status=200)

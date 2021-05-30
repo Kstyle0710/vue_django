@@ -21,3 +21,18 @@ def obj_to_post(obj):
 
 
     return post
+
+def prev_next_post(obj):
+    try:
+        prevObj = obj.get_prev()   # model 에 메소드 정의되어 있음
+        prevDict = {'id': prevObj.id, 'title': prevObj.title}
+    except obj.DoesNotExist as e:
+        prevDict = {}
+
+    try:
+        nextObj = obj.get_next()
+        nextDict = {'id': nextObj.id, 'title': nextObj.title}
+    except obj.DoesNotExist as e:
+        nextDict = {}
+
+    return prevDict, nextDict
